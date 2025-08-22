@@ -91,7 +91,7 @@ def opt_split_attribute(X: pd.DataFrame, y: pd.Series, criterion, features: pd.S
                 gain = information_gain(y, mask, criterion)  # mask as "attribute"
                 if gain > best_gain:
                     best_gain, best_attr, best_value = gain, attr, t
-        else:  # discrete/categorical feature
+        else:                                       # discrete/categorical feature
             gain = information_gain(y, X[attr], criterion)
             if gain > best_gain:
                 best_gain, best_attr, best_value = gain, attr, None
